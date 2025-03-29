@@ -1,6 +1,8 @@
-const posts = ["random content to cull - testing api endpoint - return as json"]
-
-import {NextResponse} from 'next/server';
+import { GetServerSession } from 'next-auth';
+import { NextResponse } from 'next/server';
 export async function GET() {
+
+    // dynamic content
+    const session = await getServerSession();
     return NextResponse.json(posts);
 }
